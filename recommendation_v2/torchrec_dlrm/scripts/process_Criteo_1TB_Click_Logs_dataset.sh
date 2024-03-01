@@ -56,9 +56,11 @@ do
    mv "$name" "$renamed"
 done
 
+# Comment out the shuffling steps as we want the dataset to be fixed since we use it as a trace
+
 # Step 3. Shuffle the dataset's samples in days 0 through 22. (~20hrs)
 # Day 23's samples are not shuffled and will be used for the validation set and test set.
-mkdir -p "$step_3_output_dir"
-date
-python -m torchrec.datasets.scripts.shuffle_preproc_criteo --input_dir_labels_and_dense "$step_1_output_dir" --input_dir_sparse "$step_2_output_dir" --output_dir_shuffled "$step_3_output_dir" --random_seed 0 || exit
-date
+#mkdir -p "$step_3_output_dir"
+#date
+#python -m torchrec.datasets.scripts.shuffle_preproc_criteo --input_dir_labels_and_dense "$step_1_output_dir" --input_dir_sparse "$step_2_output_dir" --output_dir_shuffled "$step_3_output_dir" --random_seed 0 || exit
+#date
